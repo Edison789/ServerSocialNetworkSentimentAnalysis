@@ -1,0 +1,5 @@
+# Ignorar el directorio 'node_modules'
+node_modules/
+
+# Ignorar todos los módulos de Node.js
+**/node_modules/

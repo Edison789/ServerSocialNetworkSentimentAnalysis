@@ -1,11 +1,16 @@
-import './App.css';
-import CommentsData from './components/commentsData';
+import './css/App.css';
+import CommetsData from './components/commentsData';
+import CommetsDataSentiment from './components/commentsDataSentiment';
 
 function App() {
   return (
-    <div className="container">
-      <h1>Dashboard</h1>
-      <CommentsData />
+    <div >
+      <p>
+        <CommetsData />
+      </p>
+      <p>
+        {/* <CommetsDataSentiment /> */}
+      </p>
     </div>
   );
 }

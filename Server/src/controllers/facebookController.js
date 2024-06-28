@@ -50,15 +50,34 @@ const getPorcentageSentimentFacebook = async (req, res) => {
     }
 };
 
-const getOnePostFacebook = async (req, res) => {
-    const postFacebook = facebookService.getOnePostFacebook();
-    res.send(`Obtener el detalle de la publicacion ${req.params.postID}`);
+const getKeyPhrasesCommentFacebook = async (req, res) => {
+    try {
+        const KeyPhrasesPostFacebook = await facebookService.getKeyPhrasesCommentFacebook();
+        res.send({ status: "OK", data: KeyPhrasesPostFacebook });
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).send({ status: "Error", message: "Error al obtener los datos de Facebook" });
+    }
 };
+
+const getCommentsbyPost = async (req, res) => {
+    const postID = req.params.postID;
+    try {
+        const data = await facebookService.getCommentsbyPost(postID);
+        const data1 = await facebookService.getOnePost(postID);
+        res.send({ status: "OK", idPost: data1.id , messagePost: data1.message, comentarios: data.comentarios, statsAnalitic: data.estadistica });
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).send({ status: "Error", message: "Error al obtener los datos de Facebook" });
+    }
+}
+
 module.exports = {
     getAllPostFacebook,
-    getOnePostFacebook,
     getAllCommentsFacebook,
     getAllSentimentCommentsFacebook,
     getPorcentageSentimentFacebook,
-    getAllReactionFacebook
+    getAllReactionFacebook,
+    getKeyPhrasesCommentFacebook,
+    getCommentsbyPost
 };

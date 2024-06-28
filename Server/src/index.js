@@ -4,7 +4,7 @@ const routes =  require ("./routes/facebookRoutes");
 const cors = require('cors');
 
 const app = express()
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.use("/api/facebook",cors(), routes);
 
 app.listen(PORT, ()=> {console.log('Server listening on port:',PORT)});

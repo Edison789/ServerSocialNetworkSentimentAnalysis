@@ -83,6 +83,8 @@
     };
 
     const myOptions = {
+
+      // maintainAspectRatio:false,
       
       scales: {
         y: {

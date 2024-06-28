@@ -1,13 +1,13 @@
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* height: 100vh; */
     background-color: #282c34;
 }
 
-.row {
+.row { 
     display: flex;
     width: 100%;
     justify-content: center;

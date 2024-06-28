@@ -7,7 +7,7 @@ import '../css/App.css';
 
 const CommentsData = () => {
     //PRUEBA
-    const { data, loading } = useData("http://localhost:3001/api/facebook/comments/sentiment");
+    const { data, loading } = useData("http://localhost:3001/api/facebook/commetsPlot/168603473012560_122158486310197635");
     console.log("comentarios",data);
     // const { totalSentimentPercentage, loading1 } = useData("http://localhost:3001/api/facebook/comments/sentiment/percentage");
     // const { totalPosts, loading2 } = useData("http://localhost:3001/api/facebook/posts");
@@ -17,7 +17,7 @@ const CommentsData = () => {
     //console.log(totalComments);//hace 3 renderizaciones la primera vacia/ la segunda con 25 / la 3ra con 14
 
     return (
-        <div className="container">
+        <div>
             {loading && <h1>Loading</h1>}
             <CommentsScatterPlot dataPlot ={data}/>
         </div>

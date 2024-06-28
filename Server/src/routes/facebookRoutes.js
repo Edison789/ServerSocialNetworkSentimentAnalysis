@@ -14,6 +14,8 @@ router
     //obtiene la cantidad de comentarios (positivos, negativos, neutros y mixtos) de todos los comentarios
     .get("/comments/sentiment/percentage", facebookController.getPorcentageSentimentFacebook)
     
-    .get("/:postID", facebookController.getOnePostFacebook)
+    .get("/comments/keyPhrases",facebookController.getKeyPhrasesCommentFacebook)
+
+    .get("/commetsPlot/:postID",facebookController.getCommentsbyPost)
 
 module.exports =  router;

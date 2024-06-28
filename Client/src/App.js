@@ -4,13 +4,15 @@ import CommetsDataSentiment from './components/commentsDataSentiment';
 
 function App() {
   return (
-    <div >
-      <p>
+    <div>
+      <div style={{ width: "800px", height: "400px", backgroundColor: "#282c34" }} >
         <CommetsData />
-      </p>
-      <p>
-        {/* <CommetsDataSentiment /> */}
-      </p>
+
+      </div>
+      {/* <div style={{ width: "800px", height: "400px", backgroundColor: "#282c34" }} >
+      <CommetsDataSentiment />
+
+      </div> */}
     </div>
   );
 }

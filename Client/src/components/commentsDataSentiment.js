@@ -8,9 +8,9 @@ const CommentsDataSentiment = () => {
     //PRUEBA
     // const { data, loading } = useData("http://localhost:3001/api/facebook/comments/sentiment");
     // console.log(data);
-    const { totalSentimentPercentage, loading } = useData("http://localhost:3001/api/facebook/comments/sentiment/percentage");
+    const { data, loading } = useData("http://localhost:3001/api/facebook/comments/sentiment/percentage");
     // const { totalPosts, loading2 } = useData("http://localhost:3001/api/facebook/posts");
-    console.log("Sentiment",totalSentimentPercentage);
+    console.log("Sentiment",data);
     // console.log(totalPosts);
 
     //console.log(totalComments);//hace 3 renderizaciones la primera vacia/ la segunda con 25 / la 3ra con 14
@@ -18,7 +18,7 @@ const CommentsDataSentiment = () => {
     return (
         <div className="container">
             {loading && <h1>Loading</h1>}
-            <CommentsSentimentPlot dataPlot ={totalSentimentPercentage}/>
+            <CommentsSentimentPlot dataPlot ={data}/>
         </div>
     );
 };

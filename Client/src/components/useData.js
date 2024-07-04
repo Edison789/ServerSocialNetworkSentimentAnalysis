@@ -6,16 +6,20 @@ const UseData = (url) => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        setLoading(true)
         const fetchData = async () => {
-            const result = await axios.get(url);
-            setData(result.data.data);
-            setLoading(false)
+          try {
+            const response = await axios.get(url);
+            setData(response.data);
+          } catch (error) {
+            console.error('Error fetching data', error);
+          } finally {
+            setLoading(false);
+          }
         };
-
+    
         fetchData();
-    }, []);
-
+      }, [url]);
+      
     return { data, loading };
 }
 
